@@ -1,0 +1,22 @@
+﻿@{
+    var db = Database.Open("ACC2011");
+    var sql = @"select First, Last, Title, Abstract, TrackName, RoomNumber
+                from sessions
+                  join tracks on sessions.TrackId = tracks.TrackId
+                where Id = @0";  
+    var session = db.Query(sql, UrlData[0]).First();
+    
+    Page.Title = @session.Title;
+}
+    <div data-role="header">
+      <h1>Session Info</h1>
+    </div>
+    
+    <div data-role="content">
+      <h4>@session.Title</h4>
+      <p>@session.First @session.Last</p>
+        
+      <p>@session.Abstract</p>
+      
+      <p>@session.TrackName / Room #@session.RoomNumber</p>
+    </div>    

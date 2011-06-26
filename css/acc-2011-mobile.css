@@ -1,0 +1,18 @@
+.ui-li-desc {
+    overflow: visible;
+    white-space: normal;
+}
+
+.ui-btn-icon-right .ui-icon {
+    position: absolute;
+    bottom: 15px;
+    top: auto;
+    margin-top: 0;
+}
+
+.ui-li-count {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    margin-top: 0;
+}

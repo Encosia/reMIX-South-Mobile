@@ -1,0 +1,27 @@
+﻿@{
+    var db = Database.Open("ACC2011");
+    var sql = @"select Id, First, Last, Title, TrackName 
+                from Sessions
+                  join Tracks on Sessions.TrackId = Tracks.TrackId
+                where Slot = @0
+                order by Sessions.TrackId";  
+    var data = db.Query(sql, UrlData[0]);
+    
+    Page.Title = "Session " + UrlData[0];
+}
+    <div data-role="header">
+      <h1>Session @UrlData[0]</h1>
+    </div>
+    
+    <div data-role="content">
+        <ul data-role="listview">
+            @foreach(var session in data) {
+            <li><a href="/SessionDetail/@session.Id">
+            <h4 style="white-space: normal;">@session.Title</h4>
+            <p>@session.First @session.Last</p>
+              
+            <p class="ui-li-count">@session.TrackName</p>
+            </a></li>
+            }
+        </ul>
+    </div>   
