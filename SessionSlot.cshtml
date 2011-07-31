@@ -1,23 +1,30 @@
 ﻿@{
     var db = Database.Open("conference-info");
-    var sql = @"select Id, Title, FirstName, LastName, TrackName 
+    
+    var sql = @"select Id, Title, FirstName, LastName, TrackName
                 from Sessions
                   join Tracks on Sessions.TrackId = Tracks.TrackId
                   join Presenters on Sessions.PresenterId = Presenters.PresenterId
-                where TimeslotId = @0
+                where Sessions.TimeslotId = @0
                 order by Sessions.TrackId";
                 
-    var data = db.Query(sql, UrlData[0]);
+    var sessions = db.Query(sql, UrlData[0]);
+
+    sql = @"select [Begin], [End] 
+            from Timeslots 
+            where TimeslotId = @0";
+
+    var timeslot = db.QuerySingle(sql, UrlData[0]);
     
-    Page.Title = "Session " + UrlData[0];
+    Page.Title = timeslot.Begin.ToShortTimeString() + "Sessions";
 }
     <div data-role="header">
-      <h1>Session @UrlData[0]</h1>
+      <h1>@timeslot.Begin.ToShortTimeString() - @timeslot.End.ToShortTimeString()</h1>
     </div>
     
     <div data-role="content">
         <ul data-role="listview">
-            @foreach(var session in data) {
+            @foreach(var session in sessions) {
             <li><a href="/SessionDetail/@session.Id">
             <h4 style="white-space: normal;">@session.Title</h4>
             <p>@session.FirstName @session.LastName</p>
