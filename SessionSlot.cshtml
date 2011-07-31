@@ -1,10 +1,12 @@
 ﻿@{
-    var db = Database.Open("ACC2011");
-    var sql = @"select Id, First, Last, Title, TrackName 
+    var db = Database.Open("conference-info");
+    var sql = @"select Id, Title, FirstName, LastName, TrackName 
                 from Sessions
                   join Tracks on Sessions.TrackId = Tracks.TrackId
-                where Slot = @0
-                order by Sessions.TrackId";  
+                  join Presenters on Sessions.PresenterId = Presenters.PresenterId
+                where TimeslotId = @0
+                order by Sessions.TrackId";
+                
     var data = db.Query(sql, UrlData[0]);
     
     Page.Title = "Session " + UrlData[0];
@@ -18,7 +20,7 @@
             @foreach(var session in data) {
             <li><a href="/SessionDetail/@session.Id">
             <h4 style="white-space: normal;">@session.Title</h4>
-            <p>@session.First @session.Last</p>
+            <p>@session.FirstName @session.LastName</p>
               
             <p class="ui-li-count">@session.TrackName</p>
             </a></li>
