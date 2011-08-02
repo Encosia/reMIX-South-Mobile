@@ -3,10 +3,17 @@
     </div>
     
     <div data-role="content">
+      <div data-role="fieldcontain">
+        @if (DateTime.Today.CompareTo(DateTime.Parse("8/6/2011")) < 0) {
+        <p style="text-align: center;">Don't have your ticket yet? 
+          <a href="http://remixsouth.eventbrite.com/" target="_blank">Register for ReMIX South today</a>.</p>
+        <p>&nbsp;<!-- Move along, nothing to see here... --></p>
+        }
+      </div>
+
       <ul data-role="listview">
         <li>
           <h4>Registration</h4>
-          <p>Lobby?</p>
 
           <p class="ui-li-count">7:30 - 8:30</p>
         </li>
