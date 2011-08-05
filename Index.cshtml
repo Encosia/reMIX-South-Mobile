@@ -2,7 +2,15 @@
   if (Request.UserAgent.Contains("IEMobile")) {
     <p>4505 Ashford Dunwoody Rd Ne#5<br />Atlanta, Ga 30346</p>
   } else { 
-    <p><a href="http://maps.google.com/maps?q=eclipse+di+luna+perimeter&ll=33.925842,-84.332256&spn=0.01533,0.01929&oe=utf-8&client=firefox-a&fb=1&gl=us&cid=0,0,1104754593105111138&t=h&z=16&iwloc=A" rel="external">4505 Ashford Dunwoody Rd Ne#5<br />Atlanta, Ga 30346</a></p>
+    <p><a href="http://maps.google.com/maps?q=eclipse+di+luna+perimeter&ll=33.925842,-84.332256&spn=0.01533,0.01929&oe=utf-8&fb=1&gl=us&cid=0,0,1104754593105111138&t=h&z=16&iwloc=A" rel="external">4505 Ashford Dunwoody Rd Ne#5<br />Atlanta, Ga 30346</a></p>
+  }
+}
+
+@helper GetMarriottAddress() {
+  if (Request.UserAgent.Contains("IEMobile")) {
+    <p>246 Perimeter Center Parkway NE<br />Atlanta, Ga 30346</p>
+  } else { 
+    <p><a href="http://maps.google.com/maps?q=marriott+perimeter+center&hl=en&ll=33.917482,-84.346837&spn=0.007087,0.013733&safe=off&fb=1&gl=us&view=map&cid=9382675204059923798&t=h&z=17&iwloc=A" rel="external">246 Perimeter Center Parkway NE<br />Atlanta, Ga 30346</a></p>
   }
 }
 
@@ -24,9 +32,9 @@
           <h4>Finding ReMIX South</h4>
           <p style="margin-bottom: 15px;">ReMIX South is at <strong>Marriott Perimeter Center</strong>:</p>
 
-          <p>246 Perimeter Center Parkway NE<br />Atlanta, Georgia 30346</p>        
+          @GetMarriottAddress()       
         </li>
-        <li data-role="list-divider" data-theme="e">
+        <li data-theme="e" style="text-align: center;">
           <h4>Schedule</h4>
         </li>
         <li>
