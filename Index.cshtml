@@ -11,15 +11,24 @@
     </div>
     
     <div data-role="content">
+      @if (DateTime.Today.CompareTo(DateTime.Parse("8/6/2011")) < 0) {
       <div data-role="fieldcontain">
-        @if (DateTime.Today.CompareTo(DateTime.Parse("8/6/2011")) < 0) {
         <p style="text-align: center;">Don't have your ticket yet? 
           <a href="http://remixsouth.eventbrite.com/" target="_blank">Register for ReMIX South today</a>.</p>
         <p>&nbsp;<!-- Move along, nothing to see here... --></p>
-        }
       </div>
+      }
 
       <ul data-role="listview">
+        <li>
+          <h4>Finding ReMIX South</h4>
+          <p style="margin-bottom: 15px;">ReMIX South is at <strong>Marriott Perimeter Center</strong>:</p>
+
+          <p>246 Perimeter Center Parkway NE<br />Atlanta, Georgia 30346</p>        
+        </li>
+        <li data-role="list-divider" data-theme="e">
+          <h4>Schedule</h4>
+        </li>
         <li>
           <h4>Registration</h4>
 
@@ -113,7 +122,7 @@
         <li>
           <h4>After Party</h4>
 
-          <p>Join us at Eclipse Di Luna to celebrate another successful ReMIX, the web's 20th anniversary, and to have a drink with fellow
+          <p>Join us at <strong>Eclipse Di Luna</strong> to celebrate another successful ReMIX, the web's 20th anniversary, and to have a drink with fellow
             ReMIXers.</p>
             
           <p style="margin: 5px 0 15px 0;">Eclipse Di Luna is located across from Perimeter Mall, at:</p>
