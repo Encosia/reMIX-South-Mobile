@@ -6,7 +6,7 @@
   if (Request.UserAgent.Contains("IEMobile")) {
     <p>246 Perimeter Center Parkway NE<br />Atlanta, Ga 30346</p>
   } else { 
-  <p><a href="http://maps.google.com/maps?q=marriott+perimeter+center&hl=en&ll=33.917482,-84.346837&spn=0.007087,0.013733&safe=off&fb=1&gl=us&view=map&cid=9382675204059923798&t=h&z=17&iwloc=A" rel="external">246 Perimeter Center Parkway NE<br />Atlanta, Ga 30346</a></p>
+  <p><a href="http://maps.google.com/maps?q=4400+Ashford+Dunwoody+Road&ll=33.923242,-84.342513&spn=0.014618,0.01929&gl=us&t=h&z=16" rel="external">246 Perimeter Center Parkway NE<br />Atlanta, Ga 30346</a></p>
   }
 }
 
@@ -16,7 +16,7 @@
     
     <div data-role="content">
       <ul data-role="listview">
-				<li data-theme="e" style="text-align: center;">
+				<li data-theme="e">
 					<h4>Eating at the venue</h4>
 				</li>
 				<li>
@@ -25,7 +25,7 @@
 					<p>If you’d like to stay close by, choose the Marriott Perimeter Center’s lunch buffet. The cost is approximately $12.</p>
 				</li>
 				
-				<li data-theme="e" style="text-align: center;">
+				<li data-theme="e">
 					<h4>Right around the corner</h4>
 				</li>
 				
@@ -35,10 +35,10 @@
 					<p style="margin-bottom: 15px;">If the Marriott lunch buffet doesn't appeal to you, Perimeter Mall offers several alternatives
 						less than a half mile away from ReMIX. The mall is located at:</p>
 						
-					<p>4400 Ashford Dunwoody Road<br />Atlanta, Ga 30346</p>
+					@GetMallAddress()
 				</li>
 				
-				<li data-theme="e" style="text-align: center;">
+				<li data-theme="e">
 					<h4>Just a little farther</h4>
 				</li>
 			</ul>
