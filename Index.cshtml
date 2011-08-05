@@ -1,4 +1,12 @@
-﻿    <div data-role="header" style="background: #f60; text-align: center; padding: 10px 0 10px 0;">
+﻿@helper GetAfterPartyAddress() {
+  if (Request.UserAgent.Contains("IEMobile")) {
+    <p>4505 Ashford Dunwoody Rd Ne#5<br />Atlanta, Ga 30346</p>
+  } else { 
+    <p><a href="http://maps.google.com/maps?q=eclipse+di+luna+perimeter&ll=33.925842,-84.332256&spn=0.01533,0.01929&oe=utf-8&client=firefox-a&fb=1&gl=us&cid=0,0,1104754593105111138&t=h&z=16&iwloc=A" rel="external">4505 Ashford Dunwoody Rd Ne#5<br />Atlanta, Ga 30346</a></p>
+  }
+}
+
+    <div data-role="header" style="background: #f60; text-align: center; padding: 10px 0 10px 0;">
       <img src="/img/remix-south-logo-sm.png" width="310" height="69" alt="ReMIX South Logo - Design. Develop. Bring the Awesome." />
     </div>
     
@@ -108,10 +116,9 @@
           <p>Join us at Eclipse Di Luna to celebrate another successful ReMIX, the web's 20th anniversary, and to have a drink with fellow
             ReMIXers.</p>
             
-          <p style="margin-top: 5px;">Eclipse Di Luna is located across from Perimeter Mall, at:</p>
+          <p style="margin: 5px 0;">Eclipse Di Luna is located across from Perimeter Mall, at:</p>
 
-          <p style="margin-top: 5px;">@if (!Request.UserAgent.Contains("IEMobile")) { <text><a href="http://maps.google.com/maps?q=eclipse+di+luna+perimeter&ll=33.925842,-84.332256&spn=0.01533,0.01929&oe=utf-8&client=firefox-a&fb=1&gl=us&cid=0,0,1104754593105111138&t=h&z=16&iwloc=A" rel="external"></text> } 4505 Ashford Dunwoody Rd Ne#5<br />
-            Atlanta, Ga 30346</a></p>
+          @GetAfterPartyAddress();
 
           <p class="ui-li-count">6:00 - 8:00</p>
         </li>
