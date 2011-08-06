@@ -8,9 +8,9 @@
 
 @helper GetMarriottAddress() {
   if (Request.UserAgent.Contains("IEMobile")) {
-    <p>246 Perimeter Center Parkway NE<br />Atlanta, Ga 30346</p>
+    <p>Marriott Perimeter Center<br />246 Perimeter Center Parkway NE<br />Atlanta, Ga 30346</p>
   } else { 
-    <p><a href="http://maps.google.com/maps?q=marriott+perimeter+center&hl=en&ll=33.917482,-84.346837&spn=0.007087,0.013733&safe=off&fb=1&gl=us&view=map&cid=9382675204059923798&t=h&z=17&iwloc=A" rel="external">246 Perimeter Center Parkway NE<br />Atlanta, Ga 30346</a></p>
+    <p><a href="http://maps.google.com/maps?q=marriott+perimeter+center&hl=en&ll=33.917482,-84.346837&spn=0.007087,0.013733&safe=off&fb=1&gl=us&view=map&cid=9382675204059923798&t=h&z=17&iwloc=A" rel="external">Marriott Perimeter Center<br />246 Perimeter Center Parkway NE<br />Atlanta, Ga 30346</a></p>
   }
 }
 
@@ -30,7 +30,7 @@
       <ul data-role="listview">
         <li>
           <h4>Finding ReMIX South</h4>
-          <p style="margin-bottom: 15px;">ReMIX South is at <strong>Marriott Perimeter Center</strong>:</p>
+          <p style="margin-bottom: 15px;">ReMIX South will be held at:</p>
 
           @GetMarriottAddress()       
         </li>
